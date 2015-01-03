@@ -8,7 +8,7 @@ void init( void )
     printf( "OpenGL renderer: %s\n", (char*)glGetString(GL_RENDERER));
  
     //Configure basic OpenGL settings
-    glClearColor(0.5, 0.5, 0.5, 1.0);
+    glClearColor(0.0, 0.0, 0.0, 1.0);
     glShadeModel(GL_SMOOTH);
     glEnable(GL_BLEND);
     glEnable(GL_TEXTURE_2D);

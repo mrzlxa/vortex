@@ -1,5 +1,5 @@
-﻿Build started 03.01.2015 19:47:09.
-     1>Project "c:\Users\DIko\documents\visual studio 2012\Projects\GL_TEST4\GL_TEST4\GL_TEST4.vcxproj" on node 2 (Build target(s)).
+﻿Build started 03.01.2015 20:05:42.
+     1>Project "C:\Users\DIko\Documents\Visual Studio 2012\Projects\GL_TEST4\GL_TEST4\GL_TEST4.vcxproj" on node 2 (Build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\GL_TEST4.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
@@ -7,14 +7,14 @@
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\GL_TEST4.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt GL_TEST4.cpp
          GL_TEST4.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\diko\documents\visual studio 2012\Projects\GL_TEST4\Debug\GL_TEST4.exe" /INCREMENTAL /NOLOGO opengl32.lib glut32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"c:\users\diko\documents\visual studio 2012\Projects\GL_TEST4\Debug\GL_TEST4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\diko\documents\visual studio 2012\Projects\GL_TEST4\Debug\GL_TEST4.lib" /MACHINE:X86 Debug\GL_TEST4.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\DIko\Documents\Visual Studio 2012\Projects\GL_TEST4\Debug\GL_TEST4.exe" /INCREMENTAL /NOLOGO opengl32.lib glut32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\DIko\Documents\Visual Studio 2012\Projects\GL_TEST4\Debug\GL_TEST4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\DIko\Documents\Visual Studio 2012\Projects\GL_TEST4\Debug\GL_TEST4.lib" /MACHINE:X86 Debug\GL_TEST4.obj
          Debug\stdafx.obj
-         GL_TEST4.vcxproj -> c:\users\diko\documents\visual studio 2012\Projects\GL_TEST4\Debug\GL_TEST4.exe
+         GL_TEST4.vcxproj -> C:\Users\DIko\Documents\Visual Studio 2012\Projects\GL_TEST4\Debug\GL_TEST4.exe
        FinalizeBuildStatus:
          Deleting file "Debug\GL_TEST4.unsuccessfulbuild".
          Touching "Debug\GL_TEST4.lastbuildstate".
-     1>Done Building Project "c:\Users\DIko\documents\visual studio 2012\Projects\GL_TEST4\GL_TEST4\GL_TEST4.vcxproj" (Build target(s)).
+     1>Done Building Project "C:\Users\DIko\Documents\Visual Studio 2012\Projects\GL_TEST4\GL_TEST4\GL_TEST4.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.36
+Time Elapsed 00:00:00.40
