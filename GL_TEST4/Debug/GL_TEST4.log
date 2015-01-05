@@ -1,4 +1,4 @@
-﻿Build started 03.01.2015 22:46:58.
+﻿Build started 05.01.2015 23:43:47.
      1>Project "C:\Users\DIko\Documents\Visual Studio 2012\Projects\GL_TEST4\GL_TEST4\GL_TEST4.vcxproj" on node 2 (Build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\GL_TEST4.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -17,4 +17,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.37
+Time Elapsed 00:00:00.33

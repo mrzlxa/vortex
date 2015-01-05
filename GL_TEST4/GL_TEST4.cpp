@@ -1,59 +1,99 @@
 #include "stdafx.h"
-#include <gl/glut.h>
+#include <gl\glut.h>
  
-
+// инициализация переменных цвета в 1.0
+// треугольник - белый
+float red=1.0f, blue=1.0f, green=1.0f;
  
-
-void display()
-{
-glClear(GL_COLOR_BUFFER_BIT); /*Функция очищения экрана*/ 
-glBegin(GL_LINES);//начало рисования линий 
-  glColor3f(0.0, 1.0, 0.0); //цвет красный 
-  //первый
-  glVertex2f (0.1, 0.1);
-  glVertex2f (-0.08, -0.1);
-
-  glVertex2f (-0.08, -0.1);
-  glVertex2f (0.26, -0.1);
-
-  glVertex2f (0.26, -0.1);
-  glVertex2f (0.1, 0.1);
-  //второй
-  glVertex2f (-0.08, -0.1);
-  glVertex2f (-0.26, -0.3);
-  
-  glVertex2f (-0.26, -0.3);
-  glVertex2f (0.1, -0.3);
-  
-  glVertex2f (0.1, -0.3);
-  glVertex2f (-0.08, -0.1);
-  //а это третий
-  glVertex2f (0.26, -0.1);
-  glVertex2f (0.42, -0.3);
-  
- glVertex2f (0.42, -0.3);
-  glVertex2f (0.1, -0.3);
-  
-  glVertex2f (0.1, -0.3);
-  glVertex2f (0.26, -0.1);
-
-  glEnd(); 
-glFlush(); /*Отрисовывает всё, что мы описали*/ 
+// угол поворота
+float angle = 0.0f;
+ 
+void changeSize(int w, int h) {
+	// предотвращение деления на ноль
+	if (h == 0)
+		h = 1;
+	float ratio =  w * 1.0 / h;
+	// используем матрицу проекции
+	glMatrixMode(GL_PROJECTION);
+	// обнуляем матрицу
+	glLoadIdentity();
+	// установить параметры вьюпорта
+	glViewport(0, 0, w, h);
+	// установить корректную перспективу
+	gluPerspective(45.0f, ratio, 0.1f, 100.0f);
+	// вернуться к матрице проекции
+	glMatrixMode(GL_MODELVIEW);
 }
  
-
-int main( int argc, char** argv )
-{
-	glutInit(&argc, argv); 
-  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB); 
-  glutInitWindowSize(600, 600); 
-  glutInitWindowPosition(100, 10); 
-  glutCreateWindow("First window!"); 
-  glClearColor(0.0, 0.0, 0.0, 0.0); 
-  glMatrixMode(GL_PROJECTION); 
-  glLoadIdentity(); 
-  glOrtho(-1.0, 1.0, -1.0, 1.0, -1.0, 1.0); 
-  glutDisplayFunc(display); 
-  glutMainLoop(); 
-  return 0;
+void renderScene(void) {
+ 
+	// очистить буфер цвета и глубины.
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	// обнулить трансформацию
+	glLoadIdentity();
+	// установить камеру
+	gluLookAt( 0.0f, 0.0f, 10.0f,
+		       0.0f, 0.0f,  0.0f,
+		       0.0f, 1.0f,  0.0f);
+	//поворот на заданную величину
+	glRotatef(angle, 0.0f, 0.0f, 1.0f);
+	// установить цвет модели
+	glColor3f(red,green,blue);
+	glBegin(GL_TRIANGLES);
+		glVertex3f(-2.0f,-1.5f, 0.0f);
+		glVertex3f( 0.0f, 2.0f, 0.0);
+		glVertex3f( 2.0f,-1.5f, 0.0);
+	glEnd();
+ 
+	angle+=0.04f;
+ 
+	glutSwapBuffers();
+}
+ 
+void processNormalKeys(unsigned char key, int x, int y) {
+ 
+	if (key == 27)
+		exit(0);
+}
+ 
+void processSpecialKeys(int key, int x, int y) {
+ 
+	switch(key) {
+		case GLUT_KEY_F1 :
+				red = 1.0;
+				green = 0.0;
+				blue = 0.0; break;
+		case GLUT_KEY_F2 :
+				red = 0.0;
+				green = 1.0;
+				blue = 0.0; break;
+		case GLUT_KEY_F3 :
+				red = 0.0;
+				green = 0.0;
+				blue = 1.0; break;
+	}
+}
+ 
+int main(int argc, char **argv) {
+ 
+	// инициализация
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
+	glutInitWindowPosition(100,100);
+	glutInitWindowSize(400,400);
+	glutCreateWindow("Урок 4");
+ 
+	// регистрация
+	glutDisplayFunc(renderScene);
+	glutReshapeFunc(changeSize);
+	glutIdleFunc(renderScene);
+ 
+	// наши новые функции
+	glutKeyboardFunc(processNormalKeys);
+	glutSpecialFunc(processSpecialKeys);
+ 
+	// основной цикл
+	glutMainLoop();
+ 
+	return 1;
 }
